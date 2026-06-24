@@ -131,7 +131,7 @@ export function BookingForm() {
     <AnimatedSection id="reservation" className="section-padding bg-white">
       <div className="container-max">
         <div className="mb-10 text-center">
-          <Logo variant="mark" className="mx-auto mb-4 h-12 w-12" />
+          <Logo layout="centered" className="mb-6" />
           <Badge variant="secondary" className="mb-4">
             Devis & Réservation
           </Badge>

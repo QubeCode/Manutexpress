@@ -26,7 +26,7 @@ export default function DevisPage() {
       <section className="section-padding bg-gradient-to-b from-brand-blue/5 to-white pt-28">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <Logo variant="mark" className="mx-auto mb-4 h-12 w-12" />
+            <Logo layout="centered" className="mb-6" />
             <PageHeader
               badge="Phase 1 — Demande client"
               title="Demandez votre devis personnalisé en Île-de-France"

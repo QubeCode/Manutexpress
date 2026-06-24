@@ -114,18 +114,9 @@ export function Header() {
         )}
       >
         <div className="container-max flex h-16 items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:h-20 lg:px-8">
-          <Link href="/" className="flex min-w-0 shrink-0 items-center lg:gap-3">
-            <Logo
-              variant="full"
-              theme={useLightHeader ? "default" : "onDark"}
-              layout="headerMobile"
-              className="lg:hidden"
-            />
-            <Logo
-              variant="full"
-              theme={useLightHeader ? "default" : "onDark"}
-              className={cn("hidden lg:inline-flex", useLightHeader ? "h-10" : "h-11")}
-            />
+          <Link href="/" className="flex shrink-0 items-center">
+            <Logo layout="headerCompact" className="lg:hidden" />
+            <Logo layout="header" className="hidden lg:inline-flex" />
           </Link>
 
           <nav
