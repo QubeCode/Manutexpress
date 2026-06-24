@@ -77,7 +77,9 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
 
   const isHome = pathname === "/";
-  const useLightHeader = isOpen || scrolled || !isHome;
+  const onHero = isHome && !scrolled && !isOpen;
+  /** White header on hero (logo visible) + after scroll + inner pages */
+  const useLightHeader = isOpen || scrolled || !isHome || onHero;
 
   useEffect(() => {
     setMounted(true);
@@ -109,7 +111,11 @@ export function Header() {
         className={cn(
           "fixed top-0 z-50 w-full transition-all duration-300",
           useLightHeader
-            ? "bg-white shadow-md"
+            ? cn(
+                onHero
+                  ? "bg-white/95 shadow-sm backdrop-blur-sm"
+                  : "bg-white shadow-md"
+              )
             : "bg-brand-blue-dark/95 shadow-lg"
         )}
       >
