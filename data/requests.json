@@ -1,0 +1,29 @@
+[
+  {
+    "id": "req_1781921185455_llbe6u",
+    "createdAt": "2026-06-20T02:06:25.454Z",
+    "updatedAt": "2026-06-20T02:06:25.454Z",
+    "status": "new",
+    "service": "livraison",
+    "mission": {
+      "pickupAddress": "1",
+      "deliveryAddress": "1",
+      "packageSize": "moyen",
+      "distanceKm": "12",
+      "urgent": true
+    },
+    "customer": {
+      "firstName": "Quincy",
+      "lastName": "Bordey",
+      "phone": "0614954500",
+      "email": "okacmoi@gmail.com",
+      "acceptTerms": true,
+      "acceptPrivacy": true
+    },
+    "scheduling": {
+      "date": "2025-11-11",
+      "time": "06:06",
+      "urgency": "flexible"
+    }
+  }
+]
