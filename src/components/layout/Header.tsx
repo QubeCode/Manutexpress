@@ -120,9 +120,12 @@ export function Header() {
         )}
       >
         <div className="container-max flex h-16 items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:h-20 lg:px-8">
-          <Link href="/" className="flex shrink-0 items-center">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center overflow-visible py-0.5"
+          >
             <Logo layout="headerCompact" className="lg:hidden" />
-            <Logo layout="header" className="hidden lg:inline-flex" />
+            <Logo layout="header" className="hidden lg:block" />
           </Link>
 
           <nav

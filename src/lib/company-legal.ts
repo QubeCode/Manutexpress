@@ -23,7 +23,7 @@ export const LEGAL_ENTITY = {
     "Manutention légère, livraison, nettoyage courant de bâtiments, petits travaux de bricolage et jardinage, dans le cadre de services à la personne.",
   hostingProvider: "À compléter lors du déploiement",
   hostingAddress: "À compléter lors du déploiement",
-  dpoEmail: "contact@manutexpress.fr",
+  dpoEmail: "contact@manutexpress.com",
   lastUpdated: "19 juin 2026",
 } as const;
 

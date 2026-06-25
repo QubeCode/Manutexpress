@@ -11,16 +11,12 @@ import { QuoteServiceStep } from "./steps/QuoteServiceStep";
 import { QuoteMissionStep } from "./steps/QuoteMissionStep";
 import { QuoteCustomerStep } from "./steps/QuoteCustomerStep";
 import { QuoteSchedulingStep } from "./steps/QuoteSchedulingStep";
-import {
-  INITIAL_QUOTE_FORM,
-  type QuoteFormData,
-  type ServiceRequest,
-} from "@/types/request";
+import { INITIAL_QUOTE_FORM, type QuoteFormData } from "@/types/request";
 import { validateQuoteStep } from "@/lib/quote-validation";
 import { SERVICES, type ServiceId } from "@/lib/constants";
 
 interface QuoteRequestFormProps {
-  onSubmitted?: (request: ServiceRequest) => void;
+  onSubmitted?: (firstName: string) => void;
 }
 
 export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
@@ -28,7 +24,7 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
   const [formData, setFormData] = useState<QuoteFormData>(INITIAL_QUOTE_FORM);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submittedRequest, setSubmittedRequest] = useState<ServiceRequest | null>(
+  const [submittedFirstName, setSubmittedFirstName] = useState<string | null>(
     null
   );
   const searchParams = useSearchParams();
@@ -79,7 +75,7 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/requests", {
+      const res = await fetch("/api/quote/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -96,8 +92,8 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
         return;
       }
 
-      setSubmittedRequest(data.request);
-      onSubmitted?.(data.request);
+      setSubmittedFirstName(formData.customer.firstName);
+      onSubmitted?.(formData.customer.firstName);
     } catch {
       setError("Erreur de connexion. Veuillez réessayer.");
     } finally {
@@ -105,7 +101,7 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
     }
   };
 
-  if (submittedRequest) {
+  if (submittedFirstName) {
     return (
       <div className="rounded-2xl border bg-white p-8 text-center shadow-brand sm:p-12">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
@@ -115,23 +111,12 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
           Demande envoyée avec succès
         </h3>
         <p className="mb-2 text-muted-foreground">
-          Merci {submittedRequest.customer.firstName}. Votre demande a bien été
-          enregistrée.
+          Merci {submittedFirstName}. Votre demande a bien été envoyée.
         </p>
-        <p className="mb-6 text-sm text-muted-foreground">
-          Référence : <strong>{submittedRequest.id}</strong>
+        <p className="text-muted-foreground">
+          Notre équipe va étudier votre besoin et reviendra vers vous
+          rapidement.
         </p>
-        <div className="rounded-xl bg-brand-blue/5 p-5 text-left text-sm leading-relaxed text-muted-foreground">
-          <p className="mb-2 font-semibold text-brand-blue">
-            Prochaines étapes
-          </p>
-          <ol className="list-decimal space-y-1 pl-5">
-            <li>Notre équipe étudie votre mission</li>
-            <li>Vous recevez un devis personnalisé par email ou téléphone</li>
-            <li>Après validation, vous payez l&apos;acompte en ligne</li>
-            <li>Votre intervention est confirmée</li>
-          </ol>
-        </div>
       </div>
     );
   }

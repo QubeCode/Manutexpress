@@ -13,11 +13,11 @@ interface LogoProps {
 
 const IMAGE_SIZES: Record<LogoLayout, string> = {
   headerCompact:
-    "h-auto max-h-10 w-auto max-w-[168px] object-contain object-left sm:max-w-[188px]",
+    "h-9 w-auto object-contain object-left sm:h-10",
   header:
-    "h-auto max-h-11 w-auto max-w-[200px] object-contain object-left lg:max-w-[220px]",
+    "h-10 w-auto object-contain object-left lg:h-11",
   centered:
-    "h-auto max-h-14 w-auto max-w-[220px] object-contain object-center sm:max-h-16 sm:max-w-[260px]",
+    "h-auto max-h-14 w-auto max-w-[min(100%,280px)] object-contain object-center sm:max-h-16",
 };
 
 export function Logo({
@@ -31,7 +31,7 @@ export function Logo({
       width={600}
       height={330}
       className={cn(
-        "shrink-0",
+        "block shrink-0 overflow-visible",
         IMAGE_SIZES[layout],
         layout === "centered" && "mx-auto",
         className

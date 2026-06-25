@@ -12,9 +12,9 @@ export const COMPANY = {
     encodeURIComponent(
       "Bonjour, j'aimerais obtenir un devis pour une prestation MANUTEXPRESS."
     ),
-  email: "contact@manutexpress.fr",
-  website: "www.manutexpress.fr",
-  websiteUrl: "https://www.manutexpress.fr",
+  email: "contact@manutexpress.com",
+  website: "www.manutexpress.com",
+  websiteUrl: "https://www.manutexpress.com",
   address: LEGAL_ENTITY.address,
   addressLine1: LEGAL_ENTITY.addressLine1,
   postalCode: LEGAL_ENTITY.postalCode,

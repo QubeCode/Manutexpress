@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ??
-  "https://www.manutexpress.fr";
+  "https://www.manutexpress.com";
 
 export const SITE_NAME = "MANUTEXPRESS";
 
