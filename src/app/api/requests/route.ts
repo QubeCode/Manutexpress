@@ -20,7 +20,8 @@ export async function POST(request: Request) {
 
     const created = await createRequest(body);
     return NextResponse.json({ request: created }, { status: 201 });
-  } catch {
+  } catch (error) {
+    console.error("[POST /api/requests]", error);
     return NextResponse.json(
       { error: "Impossible d'enregistrer la demande." },
       { status: 500 }

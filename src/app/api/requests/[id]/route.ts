@@ -29,7 +29,8 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     }
 
     return NextResponse.json({ request: updated });
-  } catch {
+  } catch (error) {
+    console.error(`[PATCH /api/requests/${id}]`, error);
     return NextResponse.json(
       { error: "Impossible de mettre à jour la demande." },
       { status: 500 }

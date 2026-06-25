@@ -1,5 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
 import type { RequestStatus, ServiceRequest } from "@/types/request";
 import type { ServiceId } from "@/lib/constants";
 import type {
@@ -7,43 +5,21 @@ import type {
   MissionDetails,
   SchedulingDetails,
 } from "@/types/request";
-
-const DATA_DIR = path.join(process.cwd(), "data");
-const DATA_FILE = path.join(DATA_DIR, "requests.json");
-
-async function ensureStore() {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  try {
-    await fs.access(DATA_FILE);
-  } catch {
-    await fs.writeFile(DATA_FILE, "[]", "utf-8");
-  }
-}
-
-async function readAll(): Promise<ServiceRequest[]> {
-  await ensureStore();
-  const raw = await fs.readFile(DATA_FILE, "utf-8");
-  return JSON.parse(raw) as ServiceRequest[];
-}
-
-async function writeAll(requests: ServiceRequest[]) {
-  await ensureStore();
-  await fs.writeFile(DATA_FILE, JSON.stringify(requests, null, 2), "utf-8");
-}
+import { readAllRequests, writeAllRequests } from "@/lib/requests-storage";
 
 function generateId() {
   return `req_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 }
 
 export async function listRequests(): Promise<ServiceRequest[]> {
-  const requests = await readAll();
+  const requests = await readAllRequests();
   return requests.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   );
 }
 
 export async function getRequest(id: string): Promise<ServiceRequest | null> {
-  const requests = await readAll();
+  const requests = await readAllRequests();
   return requests.find((r) => r.id === id) ?? null;
 }
 
@@ -57,7 +33,7 @@ export interface CreateRequestInput {
 export async function createRequest(
   input: CreateRequestInput
 ): Promise<ServiceRequest> {
-  const requests = await readAll();
+  const requests = await readAllRequests();
   const now = new Date().toISOString();
 
   const request: ServiceRequest = {
@@ -72,7 +48,7 @@ export async function createRequest(
   };
 
   requests.push(request);
-  await writeAll(requests);
+  await writeAllRequests(requests);
   return request;
 }
 
@@ -91,7 +67,7 @@ export async function updateRequest(
   id: string,
   input: UpdateRequestInput
 ): Promise<ServiceRequest | null> {
-  const requests = await readAll();
+  const requests = await readAllRequests();
   const index = requests.findIndex((r) => r.id === id);
   if (index === -1) return null;
 
@@ -109,13 +85,14 @@ export async function updateRequest(
         input.pricing.balanceDue ??
         input.pricing.totalPrice - input.pricing.depositAmount,
     };
-    if (updated.status !== "confirmed") {
+    // Auto-advance only when admin did not explicitly choose a status.
+    if (input.status === undefined && updated.status !== "confirmed") {
       updated.status = "awaiting_deposit";
     }
   }
 
   requests[index] = updated;
-  await writeAll(requests);
+  await writeAllRequests(requests);
   return updated;
 }
 
@@ -123,7 +100,7 @@ export async function markRequestPaidByStripe(
   id: string,
   stripeSessionId: string
 ): Promise<ServiceRequest | null> {
-  const requests = await readAll();
+  const requests = await readAllRequests();
   const index = requests.findIndex((r) => r.id === id);
   if (index === -1) return null;
 
@@ -148,6 +125,6 @@ export async function markRequestPaidByStripe(
   };
 
   requests[index] = updated;
-  await writeAll(requests);
+  await writeAllRequests(requests);
   return updated;
 }

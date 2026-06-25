@@ -61,6 +61,10 @@ export function AdminDashboard() {
   const [status, setStatus] = useState<RequestStatus>("new");
   const [adminNotes, setAdminNotes] = useState("");
   const [copied, setCopied] = useState(false);
+  const [saveMessage, setSaveMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
   const selected = requests.find((r) => r.id === selectedId) ?? null;
 
@@ -97,6 +101,7 @@ export function AdminDashboard() {
 
   useEffect(() => {
     if (selected) {
+      setSaveMessage(null);
       setStatus(selected.status);
       setAdminNotes(selected.adminNotes ?? "");
       setTotalPrice(selected.pricing?.totalPrice?.toString() ?? "");
@@ -144,6 +149,7 @@ export function AdminDashboard() {
   const handleSave = async () => {
     if (!selected) return;
     setSaving(true);
+    setSaveMessage(null);
 
     const body: Record<string, unknown> = {
       status,
@@ -171,7 +177,21 @@ export function AdminDashboard() {
       if (res.ok) {
         await fetchRequests();
         setSelectedId(data.request.id);
+        setSaveMessage({
+          type: "success",
+          text: "Validation enregistrée avec succès.",
+        });
+      } else {
+        setSaveMessage({
+          type: "error",
+          text: data.error ?? "Impossible d'enregistrer la validation.",
+        });
       }
+    } catch {
+      setSaveMessage({
+        type: "error",
+        text: "Erreur de connexion. Veuillez réessayer.",
+      });
     } finally {
       setSaving(false);
     }
@@ -451,6 +471,18 @@ export function AdminDashboard() {
                   placeholder="Notes pour l'équipe..."
                 />
               </div>
+
+              {saveMessage && (
+                <div
+                  className={`rounded-lg p-3 text-sm ${
+                    saveMessage.type === "success"
+                      ? "bg-green-50 text-green-700"
+                      : "bg-red-50 text-red-600"
+                  }`}
+                >
+                  {saveMessage.text}
+                </div>
+              )}
 
               <div className="flex flex-wrap gap-3">
                 <Button
