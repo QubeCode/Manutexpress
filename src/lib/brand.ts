@@ -1,5 +1,6 @@
 export const BRAND_ASSETS = {
   logoFull: "/brand/logo-full.png",
+  logoIconWordmark: "/brand/logo-icon-wordmark.png",
   logoMark: "/brand/logo-mark-orange.png",
   logoFooter: "/brand/logo-footer.png",
   photos: {

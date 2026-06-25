@@ -11,32 +11,65 @@ interface LogoProps {
   className?: string;
 }
 
-const IMAGE_SIZES: Record<LogoLayout, string> = {
-  headerCompact:
-    "h-9 w-auto object-contain object-left sm:h-10",
-  header:
-    "h-10 w-auto object-contain object-left lg:h-11",
-  centered:
-    "h-auto max-h-14 w-auto max-w-[min(100%,280px)] object-contain object-center sm:max-h-16",
+const LAYOUT_STYLES: Record<
+  LogoLayout,
+  { icon: string; text: string; gap: string }
+> = {
+  headerCompact: {
+    icon: "h-8 w-auto sm:h-9",
+    text: "text-[11px] sm:text-xs",
+    gap: "gap-0.5",
+  },
+  header: {
+    icon: "h-9 w-auto lg:h-10",
+    text: "text-xs lg:text-sm",
+    gap: "gap-0.5",
+  },
+  centered: {
+    icon: "h-14 w-auto sm:h-16",
+    text: "text-xl sm:text-2xl",
+    gap: "gap-1",
+  },
 };
 
-export function Logo({
-  layout = "header",
-  className,
-}: LogoProps) {
+function Wordmark({ textClassName }: { textClassName: string }) {
   return (
-    <Image
-      src={BRAND_ASSETS.logoFull}
-      alt="MANUTEXPRESS — Votre partenaire multi-services en Île-de-France"
-      width={600}
-      height={330}
+    <span
       className={cn(
-        "block shrink-0 overflow-visible",
-        IMAGE_SIZES[layout],
-        layout === "centered" && "mx-auto",
+        "whitespace-nowrap font-extrabold italic leading-none tracking-wide",
+        textClassName
+      )}
+    >
+      <span className="text-brand-blue">MANUT</span>
+      <span className="text-brand-orange">EXPRESS</span>
+    </span>
+  );
+}
+
+export function Logo({ layout = "header", className }: LogoProps) {
+  const styles = LAYOUT_STYLES[layout];
+
+  return (
+    <div
+      role="img"
+      aria-label="MANUTEXPRESS"
+      className={cn(
+        "inline-flex shrink-0 flex-col overflow-visible",
+        layout === "centered" ? "items-center" : "items-center",
+        styles.gap,
         className
       )}
-      priority={layout !== "centered"}
-    />
+    >
+      <Image
+        src={BRAND_ASSETS.logoIconWordmark}
+        alt=""
+        aria-hidden
+        width={496}
+        height={192}
+        className={cn("block w-auto object-contain", styles.icon)}
+        priority={layout !== "centered"}
+      />
+      <Wordmark textClassName={styles.text} />
+    </div>
   );
 }

@@ -12,7 +12,8 @@ const source = path.join(root, "public/brand/manutexpress-assets.png");
 const outDir = path.join(root, "public/brand");
 
 const crops = {
-  "logo-full.png": { left: 8, top: 8, width: 492, height: 188 },
+  "logo-full.png": { left: 8, top: 8, width: 560, height: 188 },
+  "logo-icon-wordmark.png": { left: 112, top: 66, width: 496, height: 192 },
   "hero-worker-raw.png": { left: 1085, top: 255, width: 410, height: 560 },
 };
 
