@@ -126,7 +126,7 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
       id="devis-form"
       ref={formRef}
       tabIndex={-1}
-      className="scroll-mt-28 overflow-x-hidden rounded-2xl border bg-white p-6 shadow-brand outline-none sm:p-8"
+      className="scroll-mt-28 w-full max-w-full rounded-2xl border bg-white p-6 shadow-brand outline-none sm:p-8"
     >
       <QuoteStepIndicator currentStep={currentStep} />
 
@@ -143,7 +143,7 @@ export function QuoteRequestForm({ onSubmitted }: QuoteRequestFormProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="min-w-0 overflow-x-hidden"
+          className="w-full max-w-full"
         >
           {currentStep === 1 && (
             <QuoteServiceStep

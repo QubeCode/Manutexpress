@@ -9,7 +9,7 @@ export const BRAND_ASSETS = {
     nettoyage: "/brand/photo-nettoyage.png",
     travaux: "/brand/photo-travaux.png",
     montage: "/brand/photo-montage.png",
-    assistance: "/brand/photo-travaux.png",
+    assistance: "/brand/photo-assistance.png",
   },
 } as const;
 
