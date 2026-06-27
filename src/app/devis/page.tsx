@@ -33,7 +33,7 @@ export default function DevisPage() {
               description="Décrivez votre mission en 4 étapes — manutention Paris, livraison, nettoyage ou petits travaux en Essonne. Aucun paiement immédiat : tarif adapté sous 24 h."
             />
           </div>
-          <div className="mx-auto max-w-2xl overflow-visible">
+          <div className="mx-auto min-w-0 max-w-2xl">
             <Suspense fallback={<p className="text-center">Chargement...</p>}>
               <QuoteRequestForm />
             </Suspense>

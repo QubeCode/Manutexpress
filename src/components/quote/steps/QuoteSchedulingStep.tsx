@@ -28,8 +28,8 @@ export function QuoteSchedulingStep({
         </p>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
+      <div className="mx-auto grid w-full max-w-[17rem] gap-4 min-[400px]:max-w-xs sm:max-w-none sm:grid-cols-2 sm:gap-5">
+        <div className="min-w-0 space-y-2 text-center sm:text-left">
           <Label htmlFor="date">Date souhaitée *</Label>
           <Input
             id="date"
@@ -37,17 +37,17 @@ export function QuoteSchedulingStep({
             min={today}
             value={data.date}
             onChange={(e) => onChange({ date: e.target.value })}
-            className="box-border w-full max-w-full"
+            className="quote-datetime-input box-border h-10 w-full min-w-0 max-w-full px-2.5 text-xs sm:h-11 sm:px-4 sm:text-sm"
           />
         </div>
-        <div className="space-y-2">
+        <div className="min-w-0 space-y-2 text-center sm:text-left">
           <Label htmlFor="time">Créneau horaire préféré *</Label>
           <Input
             id="time"
             type="time"
             value={data.time}
             onChange={(e) => onChange({ time: e.target.value })}
-            className="box-border w-full max-w-full"
+            className="quote-datetime-input box-border h-10 w-full min-w-0 max-w-full px-2.5 text-xs sm:h-11 sm:px-4 sm:text-sm"
           />
         </div>
       </div>

@@ -55,4 +55,13 @@
   .container-max {
     @apply mx-auto max-w-7xl;
   }
+
+  .quote-datetime-input {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .quote-datetime-input::-webkit-date-and-time-value {
+    text-align: left;
+  }
 }
