@@ -28,7 +28,7 @@ export function QuoteSchedulingStep({
         </p>
       </div>
 
-      <div className="mx-auto grid w-full max-w-[17rem] gap-4 min-[400px]:max-w-xs sm:max-w-none sm:grid-cols-2 sm:gap-5">
+      <div className="mx-auto grid w-full max-w-[17rem] -translate-x-1.5 gap-4 min-[400px]:max-w-xs sm:max-w-none sm:translate-x-0 sm:grid-cols-2 sm:gap-5">
         <div className="min-w-0 space-y-2 text-center sm:text-left">
           <Label htmlFor="date">Date souhaitée *</Label>
           <Input
