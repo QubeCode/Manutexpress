@@ -106,7 +106,7 @@ export const SERVICES = [
     features: [
       "Aide au déménagement",
       "Rangement et organisation",
-      "Services à la personne",
+      "Assistance ponctuelle pour travaux en tout genre",
     ],
   },
 ] as const;

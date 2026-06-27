@@ -6,7 +6,6 @@ import { PricingGuide } from "@/components/sections/PricingGuide";
 import { WorkflowSection } from "@/components/sections/WorkflowSection";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { ConversionCTA } from "@/components/sections/ConversionCTA";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { LocalSeoSection } from "@/components/sections/LocalSeoSection";
 import { Contact } from "@/components/sections/Contact";
 import { buildPageMetadata } from "@/lib/seo";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <WorkflowSection />
       <WhyUs />
       <ConversionCTA />
-      <Testimonials />
       <Contact />
     </SiteLayout>
   );

@@ -293,7 +293,7 @@ export function QuoteMissionStep({
       <div className="space-y-5">
         <MissionHeader
           title="Assistance domicile"
-          subtitle="Aide logistique et opérationnelle à domicile."
+          subtitle="Assistance ponctuelle pour travaux en tout genre à domicile."
         />
         <SelectField
           id="assistanceType"

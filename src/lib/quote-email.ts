@@ -1,5 +1,10 @@
 import { COMPANY, SERVICES } from "@/lib/constants";
-import { getEmailFrom, getEmailTo, getResend } from "@/lib/email/resend";
+import {
+  getEmailFrom,
+  getEmailTo,
+  getResend,
+  isDomainVerificationError,
+} from "@/lib/email/resend";
 import type { QuoteNotifyPayload } from "@/lib/quote-notify-validation";
 import type { MissionDetails } from "@/types/request";
 
@@ -124,31 +129,38 @@ export async function sendQuoteEmails(payload: QuoteNotifyPayload) {
   const customerEmail = buildCustomerConfirmationEmail(payload);
   const teamNotification = buildTeamNotificationEmail(payload);
 
-  const [customerResult, teamResult] = await Promise.all([
-    resend.emails.send({
-      from,
-      to: payload.customer.email,
-      subject: customerEmail.subject,
-      text: customerEmail.text,
-    }),
-    resend.emails.send({
-      from,
-      to: teamEmail,
-      replyTo: payload.customer.email,
-      subject: teamNotification.subject,
-      text: teamNotification.text,
-    }),
-  ]);
-
-  if (customerResult.error) {
-    throw new Error(
-      `Échec email client : ${customerResult.error.message ?? "erreur inconnue"}`
-    );
-  }
+  const teamResult = await resend.emails.send({
+    from,
+    to: teamEmail,
+    replyTo: payload.customer.email,
+    subject: teamNotification.subject,
+    text: teamNotification.text,
+  });
 
   if (teamResult.error) {
-    throw new Error(
-      `Échec email équipe : ${teamResult.error.message ?? "erreur inconnue"}`
-    );
+    const msg = teamResult.error.message ?? "erreur inconnue";
+    if (isDomainVerificationError(msg)) {
+      throw new Error(
+        "Domaine email non vérifié chez Resend. Vérifiez manutexpress.com dans le dashboard Resend, ou utilisez RESEND_SANDBOX=true avec RESEND_SANDBOX_FROM=onboarding@resend.dev en attendant."
+      );
+    }
+    throw new Error(`Échec email équipe : ${msg}`);
+  }
+
+  const customerResult = await resend.emails.send({
+    from,
+    to: payload.customer.email,
+    subject: customerEmail.subject,
+    text: customerEmail.text,
+  });
+
+  if (customerResult.error) {
+    const msg = customerResult.error.message ?? "erreur inconnue";
+    if (isDomainVerificationError(msg)) {
+      throw new Error(
+        "Impossible d'envoyer l'email de confirmation au client : domaine non vérifié chez Resend. Vérifiez manutexpress.com dans Resend (DNS SPF/DKIM)."
+      );
+    }
+    throw new Error(`Échec email client : ${msg}`);
   }
 }
