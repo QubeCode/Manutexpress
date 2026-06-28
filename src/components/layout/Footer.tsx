@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { FooterLogo } from "@/components/brand/FooterLogo";
 import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY, LEGAL_LINKS } from "@/lib/company-legal";
@@ -36,32 +36,9 @@ export function Footer() {
             <p className="mb-2 text-sm text-white/70">
               {LEGAL_ENTITY.legalForm} — Capital {LEGAL_ENTITY.shareCapital}
             </p>
-            <p className="mb-4 text-sm text-white/70">
+            <p className="text-sm text-white/70">
               {COMPANY.tagline}. {COMPANY.coverage}.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-orange"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-orange"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-brand-orange"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           <div>
