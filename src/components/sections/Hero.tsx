@@ -32,13 +32,14 @@ export function Hero() {
             </motion.div>
 
             <motion.h1
-              className="mb-6 text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+              className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Votre partenaire{" "}
-              <span className="text-brand-orange">multi-services</span> en
+              <span className="block text-brand-orange">MANUTEXPRESS</span>
+              Votre partenaire manutention à{" "}
+              <span className="text-brand-orange">Paris</span> et en
               Île-de-France
             </motion.h1>
 

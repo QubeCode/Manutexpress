@@ -19,15 +19,16 @@ export function LocalSeoSection() {
             id="local-seo-heading"
             className="mb-4 text-3xl font-bold text-brand-blue sm:text-4xl"
           >
-            Votre prestataire local en Île-de-France
+            Manutention Paris &amp; Île-de-France — MANUTEXPRESS
           </h2>
           <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
             Basés à <strong>Corbeil-Essonnes</strong>, nous intervenons rapidement
-            à <strong>Paris</strong>, en <strong>Essonne</strong>, à{" "}
-            <strong>Évry-Courcouronnes</strong> et dans les 8 départements
-            d&apos;Île-de-France. Que vous ayez besoin de manutention, d&apos;une
-            livraison rapide, d&apos;un nettoyage professionnel ou de petits travaux,
-            MANUTEXPRESS vous répond sous 24 h.
+            à <strong>Paris</strong>, en <strong>Essonne</strong> et dans les 8
+            départements d&apos;Île-de-France. Que vous recherchiez une{" "}
+            <strong>entreprise manutention Paris</strong>, une{" "}
+            <strong>aide déménagement Paris</strong> ou une{" "}
+            <strong>manutention rapide</strong>, MANUTEXPRESS vous répond sous
+            24 h.
           </p>
         </div>
 

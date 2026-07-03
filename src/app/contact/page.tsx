@@ -8,16 +8,15 @@ import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY } from "@/lib/company-legal";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact — Manutention Paris & services en Île-de-France",
+  title: "Contact MANUTEXPRESS — Manutention Paris & Île-de-France",
   description:
-    "Contactez MANUTEXPRESS à Corbeil-Essonnes. Manutention Paris, livraison rapide, nettoyage et petits travaux en Essonne. Tél. 06 52 09 93 10 — WhatsApp disponible.",
+    "Contactez MANUTEXPRESS (manutexpress.com) à Corbeil-Essonnes. Manutention Paris, aide déménagement, devis rapide. Tél. 06 52 09 93 10.",
   path: "/contact",
   keywords: [
-    "contact manutention Paris",
-    "MANUTEXPRESS Essonne",
-    "livraison rapide Paris contact",
-    "aide déménagement Essonne",
-    "services Évry Courcouronnes",
+    "contact MANUTEXPRESS",
+    "manutexpress contact",
+    "manutention Paris contact",
+    "entreprise manutention Paris",
   ],
 });
 

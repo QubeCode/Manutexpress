@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
+import { buildLegalMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY } from "@/lib/company-legal";
 
-export const metadata: Metadata = {
-  title: "Mentions légales — MANUTEXPRESS",
-  description: "Mentions légales du site MANUTEXPRESS.",
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildLegalMetadata(
+  "Mentions légales — MANUTEXPRESS",
+  "Mentions légales du site MANUTEXPRESS (manutexpress.com) — entreprise de manutention à Paris et en Île-de-France.",
+  "/mentions-legales"
+);
 
 export default function MentionsLegalesPage() {
   return (

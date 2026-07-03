@@ -1,48 +1,71 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { DEFAULT_KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/seo";
-import { getLocalBusinessJsonLd, getWebsiteJsonLd } from "@/lib/json-ld";
+import {
+  DEFAULT_KEYWORDS,
+  HOME_DESCRIPTION,
+  HOME_TITLE,
+  SITE_NAME,
+  SITE_URL,
+  getVerificationMetadata,
+} from "@/lib/seo";
+import { getAllJsonLd } from "@/lib/json-ld";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Manutention & services en Île-de-France`,
+    default: HOME_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "MANUTEXPRESS : manutention Paris, livraison rapide, nettoyage et petits travaux en Essonne et Île-de-France. Devis rapide, intervention selon disponibilité.",
+  description: HOME_DESCRIPTION,
   keywords: [...DEFAULT_KEYWORDS],
-  authors: [{ name: SITE_NAME }],
-  robots: { index: true, follow: true },
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     siteName: SITE_NAME,
     locale: "fr_FR",
     type: "website",
+    url: SITE_URL,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [
       {
         url: "/brand/logo-full.png",
         width: 600,
         height: 330,
-        alt: "MANUTEXPRESS — services multi-prestations en Île-de-France",
+        alt: "MANUTEXPRESS — manutention et services à Paris, Île-de-France",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: ["/brand/logo-full.png"],
   },
   icons: {
     icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
+  ...getVerificationMetadata(),
 };
 
-const jsonLd = [getLocalBusinessJsonLd(), getWebsiteJsonLd()];
+const jsonLd = getAllJsonLd();
 
 export default function RootLayout({
   children,

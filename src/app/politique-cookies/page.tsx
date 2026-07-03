@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
+import { buildLegalMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY } from "@/lib/company-legal";
 
-export const metadata: Metadata = {
-  title: "Politique de cookies — MANUTEXPRESS",
-  description: "Informations sur l'utilisation des cookies sur le site MANUTEXPRESS.",
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildLegalMetadata(
+  "Politique de cookies — MANUTEXPRESS",
+  "Politique de cookies du site MANUTEXPRESS (manutexpress.com).",
+  "/politique-cookies"
+);
 
 export default function PolitiqueCookiesPage() {
   return (

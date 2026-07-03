@@ -7,16 +7,15 @@ import { Logo } from "@/components/brand/Logo";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Devis gratuit — Manutention & Livraison Paris, Essonne",
+  title: "Devis gratuit manutention Paris — MANUTEXPRESS",
   description:
-    "Demandez un devis gratuit pour manutention Paris, livraison rapide, nettoyage Île-de-France, petits travaux ou aide déménagement en Essonne. Réponse sous 24 h.",
+    "Demandez un devis gratuit MANUTEXPRESS : manutention Paris, aide déménagement, débarras et montage en Île-de-France. Réponse sous 24 h.",
   path: "/devis",
   keywords: [
     "devis manutention Paris",
-    "devis livraison rapide Paris",
-    "devis nettoyage Île-de-France",
-    "devis aide déménagement Essonne",
-    "devis petits travaux Paris",
+    "devis MANUTEXPRESS",
+    "devis aide déménagement Paris",
+    "manutention rapide Paris devis",
   ],
 });
 

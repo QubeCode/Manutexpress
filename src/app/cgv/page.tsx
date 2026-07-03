@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
+import { buildLegalMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY } from "@/lib/company-legal";
 
-export const metadata: Metadata = {
-  title: "Conditions Générales de Vente — MANUTEXPRESS",
-  description: "CGV applicables aux prestations et réservations MANUTEXPRESS.",
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildLegalMetadata(
+  "Conditions Générales de Vente — MANUTEXPRESS",
+  "CGV MANUTEXPRESS — conditions applicables aux prestations de manutention et services à Paris et en Île-de-France.",
+  "/cgv"
+);
 
 export default function CgvPage() {
   return (

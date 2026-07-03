@@ -8,17 +8,17 @@ import { Button } from "@/components/ui/button";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Services — Manutention, Livraison & Nettoyage Paris & Essonne",
+  title: "Services manutention Paris — MANUTEXPRESS Île-de-France",
   description:
-    "Manutention Paris, livraison rapide, nettoyage professionnel, petits travaux et aide déménagement en Essonne. Interventions à Évry-Courcouronnes et toute l'Île-de-France.",
+    "MANUTEXPRESS : manutention Paris, aide déménagement, débarras, montage meubles et manutention ponctuelle en Île-de-France. Entreprise locale — devis rapide.",
   path: "/services",
   keywords: [
     "manutention Paris",
-    "livraison rapide Paris",
-    "nettoyage Île-de-France",
-    "petits travaux Paris",
-    "aide déménagement Essonne",
-    "montage meubles Paris",
+    "entreprise manutention Paris",
+    "aide déménagement Paris",
+    "manutention ile de france",
+    "manutention rapide Paris",
+    "MANUTEXPRESS",
   ],
 });
 

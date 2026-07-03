@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
+import { buildLegalMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 import { LEGAL_ENTITY } from "@/lib/company-legal";
 
-export const metadata: Metadata = {
-  title: "Politique de confidentialité — MANUTEXPRESS",
-  description:
-    "Politique de confidentialité et protection des données personnelles (RGPD).",
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildLegalMetadata(
+  "Politique de confidentialité — MANUTEXPRESS",
+  "Politique de confidentialité MANUTEXPRESS (RGPD) — protection des données sur manutexpress.com.",
+  "/politique-confidentialite"
+);
 
 export default function PolitiqueConfidentialitePage() {
   return (

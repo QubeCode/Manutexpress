@@ -1,4 +1,5 @@
 import { LEGAL_ENTITY } from "./company-legal";
+import { CANONICAL_DOMAIN, CANONICAL_SITE_URL } from "./seo-config";
 
 export const COMPANY = {
   name: LEGAL_ENTITY.name,
@@ -13,8 +14,8 @@ export const COMPANY = {
       "Bonjour, j'aimerais obtenir un devis pour une prestation MANUTEXPRESS."
     ),
   email: "contact@manutexpress.com",
-  website: "www.manutexpress.com",
-  websiteUrl: "https://www.manutexpress.com",
+  website: CANONICAL_DOMAIN,
+  websiteUrl: CANONICAL_SITE_URL,
   address: LEGAL_ENTITY.address,
   addressLine1: LEGAL_ENTITY.addressLine1,
   postalCode: LEGAL_ENTITY.postalCode,
