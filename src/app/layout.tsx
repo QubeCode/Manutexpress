@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalyticsRouteTracker } from "@/components/analytics/GoogleAnalyticsRouteTracker";
 import "./globals.css";
 import {
   DEFAULT_KEYWORDS,
@@ -10,6 +13,8 @@ import {
   getVerificationMetadata,
 } from "@/lib/seo";
 import { getAllJsonLd } from "@/lib/json-ld";
+
+const GA_MEASUREMENT_ID = "G-GFXCNB7NQL";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,6 +88,10 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+      <Suspense fallback={null}>
+        <GoogleAnalyticsRouteTracker gaId={GA_MEASUREMENT_ID} />
+      </Suspense>
     </html>
   );
 }

@@ -96,7 +96,7 @@ export function WhyUs() {
             Prêt à démarrer votre mission ?
           </h3>
           <p className="mb-6 text-white/90">
-            Réservez en ligne et confirmez avec un acompte de 45€ seulement.
+            Décrivez votre besoin en ligne. Nous vous répondons avec un devis, sans paiement sur le site.
           </p>
           <a
             href="/devis"

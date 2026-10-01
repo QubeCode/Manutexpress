@@ -34,15 +34,13 @@ export default function PolitiqueConfidentialitePage() {
         <li>Identité : nom, prénom</li>
         <li>Coordonnées : email, téléphone, adresse d&apos;intervention</li>
         <li>Données de mission : type de service, description, date souhaitée</li>
-        <li>Données de paiement : traitées par Stripe (nous ne stockons pas vos coordonnées bancaires)</li>
         <li>Données techniques : logs, adresse IP, cookies (voir politique cookies)</li>
       </ul>
 
       <h2>3. Finalités et bases légales</h2>
       <ul>
-        <li>Traitement de votre demande de devis ou réservation (exécution du contrat)</li>
+        <li>Traitement de votre demande de devis (mesures précontractuelles)</li>
         <li>Gestion des interventions et facturation (obligation légale et contractuelle)</li>
-        <li>Paiement sécurisé de l&apos;acompte via Stripe (exécution du contrat)</li>
         <li>Support client et suivi commercial (intérêt légitime)</li>
         <li>Respect des obligations comptables et fiscales (obligation légale)</li>
       </ul>
@@ -51,8 +49,9 @@ export default function PolitiqueConfidentialitePage() {
       <p>Vos données peuvent être communiquées à :</p>
       <ul>
         <li>Le personnel habilité de {LEGAL_ENTITY.name}</li>
-        <li>Stripe Payments Europe Ltd. (paiement en ligne)</li>
-        <li>Notre hébergeur et prestataires techniques</li>
+        <li>Resend (envoi des emails liés à votre demande de devis)</li>
+        <li>Google (mesure d&apos;audience via Google Analytics)</li>
+        <li>Vercel Inc. (hébergement du site)</li>
         <li>Les autorités compétentes sur réquisition légale</li>
       </ul>
 
@@ -60,7 +59,6 @@ export default function PolitiqueConfidentialitePage() {
       <ul>
         <li>Données de contact et de mission : 3 ans après le dernier contact</li>
         <li>Données comptables et facturation : 10 ans (obligation légale)</li>
-        <li>Données de paiement : selon les durées imposées par Stripe et la réglementation</li>
         <li>Cookies : voir notre politique cookies</li>
       </ul>
 
@@ -90,14 +88,14 @@ export default function PolitiqueConfidentialitePage() {
       <p>
         {LEGAL_ENTITY.name} met en œuvre des mesures techniques et
         organisationnelles appropriées pour protéger vos données contre tout
-        accès non autorisé, perte ou altération. Les paiements sont sécurisés
-        par Stripe (certifié PCI-DSS).
+        accès non autorisé, perte ou altération.
       </p>
 
       <h2>8. Transferts hors UE</h2>
       <p>
-        Certains prestataires (notamment Stripe) peuvent traiter des données
-        hors de l&apos;Union européenne, dans le cadre de garanties appropriées
+        Certains prestataires techniques (envoi d&apos;emails, mesure
+        d&apos;audience, hébergement) peuvent traiter des données hors de
+        l&apos;Union européenne, dans le cadre de garanties appropriées
         (clauses contractuelles types, décisions d&apos;adéquation).
       </p>
     </LegalPageLayout>

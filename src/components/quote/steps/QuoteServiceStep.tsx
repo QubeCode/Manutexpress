@@ -35,7 +35,7 @@ export function QuoteServiceStep({ selected, onSelect }: QuoteServiceStepProps) 
       </h3>
       <p className="mb-6 text-muted-foreground">
         Décrivez votre besoin — notre équipe étudie chaque mission et vous
-        envoie un devis personnalisé avant tout paiement.
+        envoie un devis personnalisé par email, sans paiement sur le site.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">

@@ -39,13 +39,18 @@ export default function MentionsLegalesPage() {
       <p>
         Le site est hébergé par {LEGAL_ENTITY.hostingProvider}.
         <br />
-        Adresse de l&apos;hébergeur : {LEGAL_ENTITY.hostingAddress}.
-      </p>
-      <p>
-        <em>
-          Ces informations seront complétées lors de la mise en production du
-          site (ex. Vercel, OVH, etc.).
-        </em>
+        Adresse : {LEGAL_ENTITY.hostingAddress}.
+        <br />
+        Site :{" "}
+        <a
+          href={LEGAL_ENTITY.hostingWebsite}
+          className="text-brand-blue hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          vercel.com
+        </a>
+        .
       </p>
 
       <h2>Propriété intellectuelle</h2>

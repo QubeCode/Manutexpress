@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, FileText, Search, CreditCard, CheckCircle2 } from "lucide-react";
+import { ArrowRight, FileText, Search, Mail, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated";
 
@@ -19,16 +19,16 @@ const STEPS = [
       "Notre équipe analyse la mission, la localisation, l'urgence et les ressources nécessaires.",
   },
   {
-    icon: CreditCard,
-    title: "3. Vous payez l'acompte",
+    icon: Mail,
+    title: "3. Vous recevez votre devis",
     description:
-      "Après validation du devis, vous recevez un lien sécurisé pour confirmer par un acompte.",
+      "Nous vous envoyons le tarif et les conditions par email. Aucun paiement n'est demandé sur le site.",
   },
   {
     icon: CheckCircle2,
-    title: "4. Intervention confirmée",
+    title: "4. Intervention planifiée",
     description:
-      "Une fois l'acompte reçu, votre mission est planifiée et un agent vous contacte.",
+      "Après votre accord, la mission est planifiée et un agent vous contacte.",
   },
 ];
 

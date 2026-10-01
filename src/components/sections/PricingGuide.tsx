@@ -66,7 +66,7 @@ export function PricingGuide() {
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Prix indicatifs pour estimer votre budget. Le devis final est
-            validé par notre équipe avant tout paiement.
+            validé par notre équipe avant l&apos;intervention.
           </p>
         </div>
 
@@ -107,12 +107,11 @@ export function PricingGuide() {
 
         <div className="mt-8 rounded-2xl border border-brand-blue/20 bg-brand-blue/5 p-6 text-center">
           <p className="mb-1 text-sm font-semibold text-brand-blue">
-            Acompte à la confirmation
+            Devis confirmé par email
           </p>
           <p className="text-muted-foreground">
-            {PRICING.deposit.fixedAmount}€ fixe ou{" "}
-            {PRICING.deposit.percentOfTotal * 100}% du montant total — solde
-            réglé après la prestation.
+            Aucun paiement n&apos;est demandé sur le site. Le tarif définitif
+            vous est envoyé avant l&apos;intervention.
           </p>
         </div>
       </div>

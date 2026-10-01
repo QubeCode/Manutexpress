@@ -41,8 +41,8 @@ export function BrandSeoSection() {
               Paris intra-muros, en petite couronne et dans les 8 départements
               d&apos;Île-de-France. Notre équipe prend en charge la{" "}
               <strong>manutention ponctuelle</strong>, l&apos;
-              <strong>aide au déménagement à Paris</strong>, le{" "}
-              <strong>débarras</strong>, le <strong>montage de meubles</strong>,
+              <strong>aide au déménagement</strong>, le{" "}
+              <strong>montage de meubles</strong>,
               la livraison, le nettoyage et les petits travaux. Chaque mission
               est étudiée individuellement : pas de tarif automatique, mais un
               devis personnalisé adapté à votre situation.

@@ -25,9 +25,9 @@ export function CookieBanner() {
   return (
     <div className="fixed bottom-20 left-4 right-4 z-50 mx-auto max-w-2xl rounded-xl border bg-white p-4 shadow-brand lg:bottom-6">
       <p className="mb-3 text-sm text-muted-foreground">
-        Ce site utilise des cookies strictement nécessaires au fonctionnement
-        (réservation, paiement sécurisé) et, le cas échéant, des cookies de
-        mesure d&apos;audience. En continuant, vous acceptez leur utilisation.{" "}
+        Ce site utilise des cookies strictement nécessaires à son fonctionnement
+        et des cookies de mesure d&apos;audience (Google Analytics). En
+        continuant, vous acceptez leur utilisation.{" "}
         <Link
           href={LEGAL_LINKS.politiqueCookies}
           className="font-medium text-brand-blue underline-offset-2 hover:underline"

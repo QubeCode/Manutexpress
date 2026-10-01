@@ -70,7 +70,7 @@ export function buildPageMetadata({
         : `${title} | ${SITE_NAME}`;
 
   return {
-    title: path === "/" ? { absolute: fullTitle } : fullTitle,
+    title: { absolute: fullTitle },
     description,
     keywords,
     applicationName: SITE_NAME,
@@ -132,7 +132,7 @@ export const LOCAL_AREAS = [
   },
   {
     name: "Évry-Courcouronnes",
-    description: "Manutention rapide et débarras en Essonne",
+    description: "Manutention rapide à Évry-Courcouronnes et en Essonne",
   },
   {
     name: "Île-de-France",

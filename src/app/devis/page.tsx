@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Devis gratuit manutention Paris — MANUTEXPRESS",
   description:
-    "Demandez un devis gratuit MANUTEXPRESS : manutention Paris, aide déménagement, débarras et montage en Île-de-France. Réponse sous 24 h.",
+    "Demandez un devis gratuit MANUTEXPRESS : manutention, aide au déménagement, livraison et montage en Île-de-France. Réponse sous 24 h, sans paiement en ligne.",
   path: "/devis",
   keywords: [
     "devis manutention Paris",

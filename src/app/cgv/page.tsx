@@ -40,41 +40,47 @@ export default function CgvPage() {
       <h2>3. Devis et commande</h2>
       <p>
         Toute demande effectuée via le formulaire en ligne constitue une
-        demande de devis ou de réservation. Le contrat n&apos;est définitif
-        qu&apos;après confirmation écrite ou téléphonique par le Prestataire,
-        précisant le tarif, la date et les conditions d&apos;intervention.
+        demande de devis. Le contrat n&apos;est définitif qu&apos;après
+        confirmation écrite par le Prestataire, précisant le tarif, la date
+        et les conditions d&apos;intervention.
       </p>
       <p>
         Le Client s&apos;engage à fournir des informations exactes et
         complètes (adresse, accès, nature de la mission, contraintes particulières).
       </p>
 
-      <h2>4. Tarifs et paiement</h2>
+      <h2>4. Tarifs</h2>
       <ul>
         <li>Les tarifs affichés sont indicatifs (« à partir de 45 € » ou « sur devis »).</li>
         <li>
-          Un acompte de <strong>45 € TTC</strong> peut être exigé lors de la
-          réservation en ligne pour confirmer la mission. Ce montant est
-          déduit du prix total de la prestation.
+          Le formulaire en ligne sert à demander un devis. Il ne déclenche
+          aucun paiement sur le site.
         </li>
-        <li>Le solde est payable à l&apos;issue de l&apos;intervention selon les modalités convenues.</li>
-        <li>Les paiements en ligne sont traités de manière sécurisée par Stripe.</li>
+        <li>
+          Le tarif définitif, la date et les conditions sont confirmés par
+          écrit avant l&apos;intervention.
+        </li>
+        <li>
+          Le règlement de la prestation s&apos;effectue selon les modalités
+          indiquées dans cette confirmation.
+        </li>
         <li>En cas de prestation B2B, des conditions particulières peuvent s&apos;appliquer.</li>
       </ul>
 
       <h2>5. Annulation et modification</h2>
       <ul>
         <li>
-          Annulation par le Client plus de 24 h avant l&apos;intervention :
-          l&apos;acompte peut être reporté ou remboursé selon accord.
+          Toute annulation ou modification doit être adressée à {COMPANY.email}{" "}
+          ou au {COMPANY.phone}.
         </li>
         <li>
-          Annulation moins de 24 h avant ou en cas de non-présentation :
-          l&apos;acompte peut être conservé à titre de dédommagement.
+          Lorsqu&apos;une intervention a déjà été confirmée par écrit, les
+          conditions d&apos;annulation sont celles indiquées dans cette
+          confirmation.
         </li>
         <li>
-          Le Prestataire se réserve le droit d&apos;annuler ou reporter une
-          intervention en cas de force majeure, avec remboursement de l&apos;acompte le cas échéant.
+          Le Prestataire peut annuler ou reporter une intervention en cas de
+          force majeure, et en informe le Client.
         </li>
       </ul>
 

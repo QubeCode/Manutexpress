@@ -9,6 +9,20 @@ const WEBSITE_ID = `${SITE_URL}/#website`;
 const HOME_DESCRIPTION_SHORT =
   "MANUTEXPRESS — manutention, déménagement et services à Paris et en Île-de-France.";
 
+const AREA_SERVED = [
+  { "@type": "AdministrativeArea", name: "Île-de-France" },
+  { "@type": "City", name: "Paris" },
+  { "@type": "AdministrativeArea", name: "Seine-et-Marne" },
+  { "@type": "AdministrativeArea", name: "Yvelines" },
+  { "@type": "AdministrativeArea", name: "Essonne" },
+  { "@type": "AdministrativeArea", name: "Hauts-de-Seine" },
+  { "@type": "AdministrativeArea", name: "Seine-Saint-Denis" },
+  { "@type": "AdministrativeArea", name: "Val-de-Marne" },
+  { "@type": "AdministrativeArea", name: "Val-d'Oise" },
+  { "@type": "City", name: "Corbeil-Essonnes" },
+  { "@type": "City", name: "Évry-Courcouronnes" },
+] as const;
+
 export function getOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -20,7 +34,7 @@ export function getOrganizationJsonLd() {
     logo: `${SITE_URL}/brand/logo-icon-wordmark.png`,
     image: `${SITE_URL}/brand/logo-full.png`,
     description:
-      "MANUTEXPRESS est une entreprise de manutention, aide au déménagement, débarras, montage et services ponctuels à Paris et en Île-de-France.",
+      "MANUTEXPRESS est une entreprise de manutention, aide au déménagement, livraison, montage et services ponctuels à Paris et en Île-de-France. Siège à Corbeil-Essonnes.",
     email: SEO_BRAND.email,
     telephone: COMPANY.phoneHref.replace("tel:", ""),
     address: {
@@ -31,11 +45,7 @@ export function getOrganizationJsonLd() {
       addressRegion: "Île-de-France",
       addressCountry: "FR",
     },
-    areaServed: [
-      { "@type": "City", name: "Paris" },
-      { "@type": "AdministrativeArea", name: "Île-de-France" },
-      { "@type": "AdministrativeArea", name: "Essonne" },
-    ],
+    areaServed: AREA_SERVED,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: COMPANY.phoneHref.replace("tel:", ""),
@@ -58,7 +68,7 @@ export function getLocalBusinessJsonLd() {
     logo: `${SITE_URL}/brand/logo-icon-wordmark.png`,
     image: `${SITE_URL}/brand/logo-full.png`,
     description:
-      "Entreprise de manutention à Paris et en Île-de-France : aide au déménagement, débarras, montage de meubles et manutention ponctuelle. Devis rapide MANUTEXPRESS.",
+      "Entreprise de manutention à Paris et en Île-de-France, basée à Corbeil-Essonnes : aide au déménagement, livraison, montage de meubles et manutention ponctuelle. Devis rapide MANUTEXPRESS.",
     telephone: COMPANY.phoneHref.replace("tel:", ""),
     email: SEO_BRAND.email,
     priceRange: "€€",
@@ -75,13 +85,7 @@ export function getLocalBusinessJsonLd() {
       latitude: 48.6104,
       longitude: 2.4821,
     },
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "Île-de-France" },
-      { "@type": "City", name: "Paris" },
-      { "@type": "AdministrativeArea", name: "Essonne" },
-      { "@type": "City", name: "Évry-Courcouronnes" },
-      { "@type": "City", name: "Corbeil-Essonnes" },
-    ],
+    areaServed: AREA_SERVED,
     serviceType: [...SERVICE_TYPES],
     openingHoursSpecification: [
       {
@@ -141,10 +145,7 @@ export function getServiceSchemasJsonLd() {
     name: `${service.title} — MANUTEXPRESS`,
     description: service.description,
     provider: { "@id": ORGANIZATION_ID },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Île-de-France",
-    },
+    areaServed: AREA_SERVED,
     serviceType: service.title,
     url: `${SITE_URL}/devis?service=${service.id}`,
   }));

@@ -21,10 +21,11 @@ export const LEGAL_ENTITY = {
   publicationDirector: "Michel Bruno RECHAL",
   activityDescription:
     "Manutention légère, livraison, nettoyage courant de bâtiments, petits travaux de bricolage et jardinage, dans le cadre de services à la personne.",
-  hostingProvider: "À compléter lors du déploiement",
-  hostingAddress: "À compléter lors du déploiement",
+  hostingProvider: "Vercel Inc.",
+  hostingAddress: "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+  hostingWebsite: "https://vercel.com",
   dpoEmail: "contact@manutexpress.com",
-  lastUpdated: "19 juin 2026",
+  lastUpdated: "1 octobre 2026",
 } as const;
 
 export const LEGAL_LINKS = {

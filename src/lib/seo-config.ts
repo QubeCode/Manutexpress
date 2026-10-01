@@ -26,7 +26,6 @@ export const LOCAL_KEYWORDS = [
   "aide demenagement paris",
   "entreprise manutention Paris",
   "manutention rapide Paris",
-  "débarras Paris",
   "montage meubles Paris",
   "manutention ponctuelle Paris",
   "livraison rapide Paris",
@@ -38,7 +37,6 @@ export const LOCAL_KEYWORDS = [
 export const SERVICE_TYPES = [
   "Manutention",
   "Aide au déménagement",
-  "Débarras",
   "Montage de meubles",
   "Manutention ponctuelle",
   "Livraison",
@@ -51,4 +49,4 @@ export const HOME_TITLE =
   "MANUTEXPRESS | Manutention, Déménagement & Services à Paris";
 
 export const HOME_DESCRIPTION =
-  "MANUTEXPRESS (manutexpress.com) : manutention, aide au déménagement, débarras et montage à Paris et en Île-de-France. Devis rapide sous 24 h — entreprise locale basée à Corbeil-Essonnes.";
+  "MANUTEXPRESS (manutexpress.com) : manutention, aide au déménagement, livraison et montage à Paris et en Île-de-France. Devis rapide sous 24 h — entreprise basée à Corbeil-Essonnes.";

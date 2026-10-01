@@ -25,40 +25,22 @@ export default function PolitiqueCookiesPage() {
 
       <h2>Cookies strictement nécessaires</h2>
       <p>
-        Indispensables au fonctionnement du site (réservation, session,
-        sécurité). Ils ne nécessitent pas votre consentement préalable.
+        Indispensables au fonctionnement du site (affichage, sécurité). Ils
+        ne nécessitent pas votre consentement préalable.
       </p>
 
-      <h2>Cookies de paiement (Stripe)</h2>
+      <h2>Cookies de mesure d&apos;audience</h2>
       <p>
-        Lors d&apos;un paiement en ligne, Stripe peut déposer des cookies
-        techniques pour sécuriser la transaction et lutter contre la fraude.
-        Pour plus d&apos;informations :{" "}
-        <a
-          href="https://stripe.com/fr/privacy"
-          className="text-brand-blue hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          politique de confidentialité Stripe
-        </a>
-        .
-      </p>
-
-      <h2>Cookies de mesure d&apos;audience (le cas échéant)</h2>
-      <p>
-        Si des outils d&apos;analyse (ex. Google Analytics) sont activés, des
-        cookies de mesure d&apos;audience anonymisés peuvent être utilisés pour
-        améliorer le site. Dans ce cas, votre consentement sera demandé via
-        le bandeau cookies.
+        Le site utilise Google Analytics pour mesurer la fréquentation des
+        pages. Ces cookies permettent de comprendre quelles pages sont
+        consultées. Le bandeau cookies vous en informe.
       </p>
 
       <h2>3. Gestion de vos préférences</h2>
       <p>
         Vous pouvez à tout moment configurer votre navigateur pour refuser les
         cookies ou être alerté de leur dépôt. Le refus des cookies
-        strictement nécessaires peut limiter certaines fonctionnalités
-        (notamment la réservation et le paiement en ligne).
+        strictement nécessaires peut limiter certaines fonctionnalités du site.
       </p>
 
       <h2>4. Durée de conservation</h2>

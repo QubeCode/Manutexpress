@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Services manutention Paris — MANUTEXPRESS Île-de-France",
   description:
-    "MANUTEXPRESS : manutention Paris, aide déménagement, débarras, montage meubles et manutention ponctuelle en Île-de-France. Entreprise locale — devis rapide.",
+    "MANUTEXPRESS : manutention, aide au déménagement, livraison, nettoyage et montage de meubles en Île-de-France. Entreprise basée à Corbeil-Essonnes — devis rapide.",
   path: "/services",
   keywords: [
     "manutention Paris",
