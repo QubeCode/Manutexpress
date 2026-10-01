@@ -10,6 +10,7 @@ import {
   getVerificationMetadata,
 } from "@/lib/seo";
 import { getAllJsonLd } from "@/lib/json-ld";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,6 +83,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
